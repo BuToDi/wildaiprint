@@ -77,21 +77,23 @@ st.markdown("""
     """)
 if "location_given" not in st.session_state:
     st.session_state.location_given = False
+    st.session_state.location = None
 
 def accept_location():
     st.session_state.location_given = True
 
 if not st.session_state.location_given:
-    st.session_state.location = streamlit_geolocation()
+    st.markdown("Veuillez autoriser la localisation.")
+    if st.button("Autoriser la localisation"):
+        # Ici tu devrais utiliser un composant pour récupérer la localisation
+        # Par exemple streamlit_geolocation ou un formulaire HTML/JS
+        st.session_state.location = {"lat": 48.8566, "lon": 2.3522}  # exemple Paris
+        accept_location()
+        st.experimental_rerun()  # relance l'app pour continuer après autorisation
 
-    location = st.session_state.location
-
-    if location:
-        st.session_state.location = location
-
-st.stop()
-
-st.write(location)
+# Affichage de la localisation
+if st.session_state.location_given:
+    st.write("Localisation :", st.session_state.location)
    
 
 
