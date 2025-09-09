@@ -89,9 +89,9 @@ if not st.session_state.location_given:
     if location:
         st.session_state.location = location
 
-    st.stop()
+st.stop()
 
-    st.write(location)
+st.write(location)
    
 
 
