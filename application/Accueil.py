@@ -20,7 +20,7 @@ import streamlit as st
 
 
 
-df = pd.read_csv("dataphoto2.csv")
+df = pd.read_csv("application/dataphoto2.csv")
 
 
 with st.container():
