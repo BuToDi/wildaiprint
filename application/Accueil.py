@@ -326,27 +326,27 @@ with st.container():
         dict(
             title="Chat",
             text="Un chat",
-            img="assets/chat.webp",
+            img="application/assets/chat.webp",
         ),
         dict(
             title="Castor",
             text="Un castor",
-            img="assets/castor.webp",
+            img="application/assets/castor.webp",
         ),
         dict(
             title="Lapin",
             text="Un lapin",
-            img="assets/lapin.webp",
+            img="application/assets/lapin.webp",
         ),
         dict(
             title="Ecureuil",
             text="Un écureuil",
-            img="assets/ecureil.webp",
+            img="application/assets/ecureil.webp",
         ),
         dict(
             title="Chien",
             text="Un chien",
-            img="assets/chien.webp",
+            img="application/assets/chien.webp",
         ),
     ]
 
