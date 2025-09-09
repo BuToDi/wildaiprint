@@ -94,6 +94,8 @@ if not st.session_state.location_given:
 
     st.write(location)
    
+if st.session_state.location_given:
+    st.stop()
 
 
 
