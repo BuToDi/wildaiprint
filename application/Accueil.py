@@ -57,14 +57,14 @@ if not st.session_state.consent_given:
     Avant de continuer, vous devez accepter que ce site utilise les données suivantes :
 
     
-Données de localisation GPS
-Date et heure de la prise de photo
+    - Données de localisation GPS
+    - Date et heure de la prise de photo
 
     Ces données sont utilisées uniquement pour :
 
-Identifier des traces animales
-Fournir des résultats localisés
-Réaliser des analyses statistiques environnementales
+    - Identifier des traces animales
+    - Fournir des résultats localisés
+    - Réaliser des analyses statistiques environnementales
 
     En aucun cas vos données personnelles ne sont collectées sans votre consentement explicite.
     """)
