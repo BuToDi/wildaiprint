@@ -48,7 +48,7 @@ st.markdown("<div style='margin-top: 80px;'></div>", unsafe_allow_html=True)
 if "consent_given" not in st.session_state :
     st.session_state.consent_given=  False
 
-def accept_content():
+def accept_consent():
     st.session_state.consent_given = True
 
 if not st.session_state.consent_given:
