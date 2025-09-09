@@ -1,0 +1,8 @@
+streamlit
+Pillow
+tensorflow
+ipyleaflet
+matplotlib
+numpy
+pandas
+streamlit-carousel
