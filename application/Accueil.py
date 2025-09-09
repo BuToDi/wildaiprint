@@ -70,6 +70,7 @@ if not st.session_state.consent_given:
     - Réaliser des analyses statistiques environnementales  
     """)
     st.button("J'accepte", on_click=accept_consent)
+    st.stop()
 
 # --- LOCALISATION ---
 if "location_given" not in st.session_state:
@@ -85,8 +86,6 @@ if not st.session_state.location_given:
         st.markdown("Veuillez autoriser la localisation.")
         st.stop()
 
-# Ici, tu peux afficher le site normalement :
-st.success(f"Localisation déjà donnée : {st.session_state.location}")
 
 
 
