@@ -16,6 +16,7 @@ from tensorflow.keras.preprocessing import image
 import pandas as pd
 from streamlit_carousel import carousel
 import streamlit as st
+from streamlit_geolocation import streamlit_geolocation
 
 
 
@@ -44,26 +45,53 @@ st.markdown(
 st.markdown("<div style='margin-top: 80px;'></div>", unsafe_allow_html=True)
 
 
+if "consent_given" not in st.session_state :
+    st.session_state.consent_given=  False
 
-if "is_logged_in" not in st.session_state:
-    st.session_state.is_logged_in = False
+def accept_content():
+    st.session_state.consent_given = True
 
-def login():
-    st.session_state.is_logged_in = True
+if not st.session_state.consent_given:
+    st.header("Consentement à l'utilisation des données")
+    st.markdown("""
+    Avant de continuer, vous devez accepter que ce site utilise les données suivantes :
 
-def logout():
-    st.session_state.is_logged_in = False
-    st.session_state.user_name = ""
+    
+Données de localisation GPS
+Date et heure de la prise de photo
 
-if not st.session_state.is_logged_in:
-    st.button("Log in", on_click=login)
-    st.session_state.user_name = st.text_input("Nom d'utilisateur", "")
-    st.stop()
+    Ces données sont utilisées uniquement pour :
 
-st.markdown(f"Bienvenue {st.session_state.user_name} !")
-st.button("Log out", on_click=logout)
+Identifier des traces animales
+Fournir des résultats localisés
+Réaliser des analyses statistiques environnementales
 
-# stocker "st.session_state.user_name" dans un df avec l'heure et la date
+    En aucun cas vos données personnelles ne sont collectées sans votre consentement explicite.
+    """)
+
+    st.button("J'accepte", on_click = accept_consent)
+
+
+st.markdown("""
+    Veuillez autoriser la localisation.
+    """)
+if "location_given" not in st.session_state:
+    st.session_state.location_given = False
+
+def accept_location():
+    st.session_state.location_given = True
+
+if not st.session_state.location_given:
+   st.session_state.location = streamlit_geolocation()
+   location = st.session_state.location
+
+   if location :
+       st.session_state.location = location
+       st.stop()
+   
+st.write(location)
+   
+
 
 
 with st.container():
