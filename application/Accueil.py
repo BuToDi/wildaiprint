@@ -83,17 +83,16 @@ def accept_location():
     st.session_state.location_given = True
 
 if not st.session_state.location_given:
-    st.markdown("Veuillez autoriser la localisation.")
-    if st.button("Autoriser la localisation"):
-        # Ici tu devrais utiliser un composant pour récupérer la localisation
-        # Par exemple streamlit_geolocation ou un formulaire HTML/JS
-        st.session_state.location = {"lat": 48.8566, "lon": 2.3522}  # exemple Paris
-        accept_location()
-        st.experimental_rerun()  # relance l'app pour continuer après autorisation
+    st.session_state.location = streamlit_geolocation()
 
-# Affichage de la localisation
-if st.session_state.location_given:
-    st.write("Localisation :", st.session_state.location)
+    location = st.session_state.location
+
+    if location:
+        st.session_state.location = location
+
+    st.stop()
+
+    st.write(location)
    
 
 
@@ -128,13 +127,6 @@ normalization_layer = tf.keras.layers.Rescaling(1./255)
 
 train_ds = train_ds.map(lambda x, y: (normalization_layer(x), y))
 val_ds   = val_ds.map(lambda x, y: (normalization_layer(x), y))
-
-
-print("Classes détectées :", class_names)
-
-for images, labels in train_ds.take(1):
-    print("Shape d’un batch :", images.shape)
-    print("Labels :", labels.numpy())
 
 
 classifier = Sequential() 
