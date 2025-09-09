@@ -45,8 +45,12 @@ st.markdown(
 st.markdown("<div style='margin-top: 80px;'></div>", unsafe_allow_html=True)
 
 
-if "consent_given" not in st.session_state :
-    st.session_state.consent_given=  False
+import streamlit as st
+from streamlit_geolocation import streamlit_geolocation
+
+# --- CONSENTEMENT ---
+if "consent_given" not in st.session_state:
+    st.session_state.consent_given = False
 
 def accept_consent():
     st.session_state.consent_given = True
@@ -56,46 +60,35 @@ if not st.session_state.consent_given:
     st.markdown("""
     Avant de continuer, vous devez accepter que ce site utilise les données suivantes :
 
-    
-    - Données de localisation GPS
-    - Date et heure de la prise de photo
+    - Données de localisation GPS  
+    - Date et heure de la prise de photo  
 
-    Ces données sont utilisées uniquement pour :
+    Ces données sont utilisées uniquement pour :  
 
-    - Identifier des traces animales
-    - Fournir des résultats localisés
-    - Réaliser des analyses statistiques environnementales
-
-    En aucun cas vos données personnelles ne sont collectées sans votre consentement explicite.
+    - Identifier des traces animales  
+    - Fournir des résultats localisés  
+    - Réaliser des analyses statistiques environnementales  
     """)
+    st.button("J'accepte", on_click=accept_consent)
+    st.stop()
 
-    st.button("J'accepte", on_click = accept_consent)
-
-
-st.markdown("""
-    Veuillez autoriser la localisation.
-    """)
+# --- LOCALISATION ---
 if "location_given" not in st.session_state:
     st.session_state.location_given = False
     st.session_state.location = None
 
-def accept_location():
-    st.session_state.location_given = True
-
 if not st.session_state.location_given:
-    st.session_state.location = streamlit_geolocation()
-
-    location = st.session_state.location
-
+    location = streamlit_geolocation()
     if location:
         st.session_state.location = location
+        st.session_state.location_given = True
+    else:
+        st.markdown("Veuillez autoriser la localisation.")
+        st.stop()
 
-    st.stop()
+# Ici, tu peux afficher le site normalement :
+st.success(f"Localisation déjà donnée : {st.session_state.location}")
 
-    st.write(location)
-   
-if st.session_state.location_given:
-    st.stop()
 
 
 
