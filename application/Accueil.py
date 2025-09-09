@@ -181,31 +181,31 @@ if img_file_buffer is not None:
         st.image(info["Photo"], use_container_width=True)
         st.image(info["Empreintes"], use_container_width=True)
         if predicted_class == "Ours":
-            save_path = r"application/Mammiferes/Ours"
+            save_path = "application/Mammiferes/Ours"
         elif predicted_class == "Loup":
-            save_path = r"application/Mammiferes/Loup"
+            save_path = "application/Mammiferes/Loup"
         elif predicted_class == "Rat":
-            save_path = r"application/Mammiferes/Rat"
+            save_path = "application/Mammiferes/Rat"
         elif predicted_class == "Raton laveur":
-            save_path = r"application/Mammiferes/Raton laveur"
+            save_path = "application/Mammiferes/Raton laveur"
         elif predicted_class == "Puma":
-            save_path = r"application/Mammiferes/Puma"
+            save_path = "application/Mammiferes/Puma"
         elif predicted_class == "Renard":
-            save_path = r"application/Mammiferes/Renard"
+            save_path = "application/Mammiferes/Renard"
         elif predicted_class == "Lynx":
-            save_path = r"application/Mammiferes/Lynx"
+            save_path = "application/Mammiferes/Lynx"
         elif predicted_class == "Lapin":
-            save_path = r"application/Mammiferes/Lapin"
+            save_path = "application/Mammiferes/Lapin"
         elif predicted_class == "Ecureuil":
-            save_path = r"application/Mammiferes/Ecureuil"
+            save_path = "application/Mammiferes/Ecureuil"
         elif predicted_class == "Coyote":
-            save_path = r"application/Mammiferes/Coyote"
+            save_path = "application/Mammiferes/Coyote"
         elif predicted_class == "Chien":
-            save_path = r"application/Mammiferes/Chien"
+            save_path = "application/Mammiferes/Chien"
         elif predicted_class == "Chat":
-            save_path = r"application/Mammiferes/Chat"
+            save_path = "application/Mammiferes/Chat"
         elif predicted_class == "Castor":
-            save_path = r"application/Mammiferes/Castor"
+            save_path = "application/Mammiferes/Castor"
        
         file_path = os.path.join(save_path, img_file_buffer.name)
 
@@ -262,31 +262,31 @@ if uploaded_file is not None:
         st.image(info["Photo"], use_container_width=True)
         st.image(info["Empreintes"], use_container_width=True)
         if predicted_class == "Ours":
-            save_path = r"application/Mammiferes/Ours"
+            save_path = "application/Mammiferes/Ours"
         elif predicted_class == "Loup":
-            save_path = r"application/Mammiferes/Loup"
+            save_path = "application/Mammiferes/Loup"
         elif predicted_class == "Rat":
-            save_path = r"application/Mammiferes/Rat"
+            save_path = "application/Mammiferes/Rat"
         elif predicted_class == "Raton laveur":
-            save_path = r"application/Mammiferes/Raton laveur"
+            save_path = "application/Mammiferes/Raton laveur"
         elif predicted_class == "Puma":
-            save_path = r"application/Mammiferes/Puma"
+            save_path = "application/Mammiferes/Puma"
         elif predicted_class == "Renard":
-            save_path = r"application/Mammiferes/Renard"
+            save_path = "application/Mammiferes/Renard"
         elif predicted_class == "Lynx":
-            save_path = r"application/Mammiferes/Lynx"
+            save_path = "application/Mammiferes/Lynx"
         elif predicted_class == "Lapin":
-            save_path = r"application/Mammiferes/Lapin"
+            save_path = "application/Mammiferes/Lapin"
         elif predicted_class == "Ecureuil":
-            save_path = r"application/Mammiferes/Ecureuil"
+            save_path = "application/Mammiferes/Ecureuil"
         elif predicted_class == "Coyote":
-            save_path = r"application/Mammiferes/Coyote"
+            save_path = "application/Mammiferes/Coyote"
         elif predicted_class == "Chien":
-            save_path = r"application/Mammiferes/Chien"
+            save_path = "application/Mammiferes/Chien"
         elif predicted_class == "Chat":
-            save_path = r"application/Mammiferes/Chat"
+            save_path = "application/Mammiferes/Chat"
         elif predicted_class == "Castor":
-            save_path = r"application/Mammiferes/Castor"
+            save_path = "application/Mammiferes/Castor"
        
         file_path = os.path.join(save_path, uploaded_file.name)
 
