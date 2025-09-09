@@ -1,0 +1,24 @@
+[server]
+# Adresse et port du serveur
+headless = true
+port = 8501
+enableCORS = false
+enableXsrfProtection = true
+
+[browser]
+# Ouvre automatiquement l’app dans le navigateur
+gatherUsageStats = false
+serverAddress = "localhost"
+
+[theme]
+# Personnalisation du thème de l’application
+base="dark"          # options: "light" ou "dark"
+primaryColor="#31C48D"
+backgroundColor="#ffffff33"
+secondaryBackgroundColor="#31C48D"
+textColor="#31333f"
+font="sans serif"     # options: "sans serif", "serif", "monospace"
+
+[logger]
+level = "info"   # options: "error", "warning", "info", "debug"
+
