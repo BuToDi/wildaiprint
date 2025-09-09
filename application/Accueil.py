@@ -196,7 +196,6 @@ if img_file_buffer is not None:
         - **Fun Fact :** {info['Fun fact']}
         """)
         st.image(info["Photo"], use_container_width=True)
-        st.image(info["Empreintes"], use_container_width=True)
         if predicted_class == "Ours":
             save_path = "application/Mammiferes/Ours"
         elif predicted_class == "Loup":
@@ -277,7 +276,6 @@ if uploaded_file is not None:
         - **Fun Fact :** {info['Fun fact']}
         """)
         st.image(info["Photo"], use_container_width=True)
-        st.image(info["Empreintes"], use_container_width=True)
         if predicted_class == "Ours":
             save_path = "application/Mammiferes/Ours"
         elif predicted_class == "Loup":
