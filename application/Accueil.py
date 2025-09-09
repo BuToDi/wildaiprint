@@ -29,7 +29,7 @@ with st.container():
     collogo, colnom = st.columns([0.5, 3])
 
     with collogo:
-        st.image("assets/logo_vert.webp", width=100)
+        st.image("application/assets/logo_vert.webp", width=100)
 
     with colnom: 
         st.markdown(
