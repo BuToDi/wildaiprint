@@ -70,7 +70,6 @@ if not st.session_state.consent_given:
     - Réaliser des analyses statistiques environnementales  
     """)
     st.button("J'accepte", on_click=accept_consent)
-    st.stop()
 
 # --- LOCALISATION ---
 if "location_given" not in st.session_state:
