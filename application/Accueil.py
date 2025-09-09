@@ -82,13 +82,15 @@ def accept_location():
     st.session_state.location_given = True
 
 if not st.session_state.location_given:
-   st.session_state.location = streamlit_geolocation()
-   location = st.session_state.location
+    st.session_state.location = streamlit_geolocation()
 
-   if location :
-       st.session_state.location = location
+    location = st.session_state.location
+
+    if location:
+        st.session_state.location = location
+
     st.stop()
-   
+
     st.write(location)
    
 
